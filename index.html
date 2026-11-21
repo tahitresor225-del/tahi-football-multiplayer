@@ -1,0 +1,64 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TAHI FOOTBALL MULTIJOUEUR</title>
+<style>
+body {
+  background: #087a36;
+  color: white;
+  font-family: Arial;
+  text-align: center;
+}
+h1 { color: gold; }
+#terrain {
+  background: #159447;
+  border: 4px solid white;
+  border-radius: 12px;
+  padding: 25px 10px;
+  margin: 15px;
+}
+button {
+  padding: 14px;
+  margin: 5px;
+  border: 0;
+  border-radius: 10px;
+  font-size: 17px;
+  background: gold;
+}
+</style>
+</head>
+<body>
+<h1>⚽ TAHI FOOTBALL</h1>
+<h3>MULTIJOUEUR</h3>
+<div id="terrain">
+  <h2>🏟️ TERRAIN DE FOOTBALL</h2>
+  <div style="font-size:65px">⚽</div>
+  <h3 id="score">Équipe A 0 - 0 Équipe B</h3>
+  <p id="message">Le match va commencer !</p>
+</div>
+<button onclick="jouer('A')">Équipe A ⚽</button>
+<button onclick="jouer('B')">Équipe B ⚽</button>
+<button onclick="reset()">Recommencer</button>
+<script>
+let a=0,b=0;
+function jouer(equipe) {
+ if(equipe==="A") a++;
+ else b++;
+ document.getElementById("score").innerText =
+ "Équipe A "+a+" - "+b+" Équipe B";
+ document.getElementById("message").innerText =
+ "But de l'équipe "+equipe+" !";
+}
+function reset() {
+ a=0;b=0;
+ document.getElementById("score").innerText =
+ "Équipe A 0 - 0 Équipe B";
+ document.getElementById("message").innerText =
+ "Nouveau match !";
+}
+</script>
+</body>
+</html>
